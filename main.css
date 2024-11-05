@@ -1,0 +1,58 @@
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+    color:#213f52
+}
+
+details[open] {
+    padding: .5em;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+
+h1 {
+    color: #213F52;
+    border-bottom: dashed 2px #213F52;
+}
+
+.btn-flat-border {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #213F52;
+    border: solid 1px #213F52;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.btn-flat-border:hover {
+    background: #213F52;
+    color: white;
+}
+
+h4 { 
+    color: #213f52;
+}
+
+a {
+    color: #213f52
+}
+
+
+
+textarea {
+    -moz-box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);
+    -webkit-box-shadow: inset 1px 4px 9px -6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 1px 4px 9px -6px rgba(0,0,0,0.5);3px;.5);
+}
