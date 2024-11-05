@@ -3,75 +3,76 @@
 <head>
     <title>QuestNotes Log Editor</title>
     <link rel="stylesheet" href="./main.css">
+    <meta charset="utf-8">
 </head>
 
 <body>
     <div>
         <h1>QuestNotes Log Editor</h1>
-        MMOTRPG <a href="https://www.questnotes.net/">QuestNotes</a>‚ÌƒƒO•ÒWŽx‰‡ƒc[ƒ‹‚Å‚·BŽæ“¾‚µ‚½ƒƒO‚ð‰º‚ÌƒeƒLƒXƒgƒ{ƒbƒNƒX‚É“ü—Í‚µA•ÒW‚ð‰Ÿ‚·‚ÆƒVƒXƒeƒ€ƒƒbƒZ[ƒW‚ðŽæ‚èœ‚­Ž–‚ªo—ˆ‚Ü‚·B
+        MMOTRPG <a href="https://www.questnotes.net/">QuestNotes</a>ã®ãƒ­ã‚°ç·¨é›†æ”¯æ´ãƒ„ãƒ¼ãƒ«ã§ã™ã€‚å–å¾—ã—ãŸãƒ­ã‚°ã‚’ä¸‹ã®ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹ã«å…¥åŠ›ã—ã€ç·¨é›†ã‚’æŠ¼ã™ã¨ã‚·ã‚¹ãƒ†ãƒ ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å–ã‚Šé™¤ãäº‹ãŒå‡ºæ¥ã¾ã™ã€‚
     </div>
     <div>
-        <h4>Ý’è</h4>
-        <form name="form1"><input type="checkbox" name="equip" value="soubi">‘•”õ‰ðœ/‘•”õŠÖ˜A‚ðíœ‚·‚é
+        <h4>è¨­å®š</h4>
+        <form name="form1"><input type="checkbox" name="equip" value="soubi">è£…å‚™è§£é™¤/è£…å‚™é–¢é€£ã‚’å‰Šé™¤ã™ã‚‹
     </div>
     <div>
         <p>
-            <h4>žƒƒO“ü—Í—“ž</h4>
-            <textarea id="inputlog" name="inputlog" cols="80" rows="20" placeholder="‚±‚±‚ÉŽæ“¾‚µ‚½ƒƒO‚ðƒy[ƒXƒg‚µ‚Ä‚­‚¾‚³‚¢B"></textarea>
+            <h4>â—‡ãƒ­ã‚°å…¥åŠ›æ¬„â—‡</h4>
+            <textarea id="inputlog" name="inputlog" cols="80" rows="20" placeholder="ã“ã“ã«å–å¾—ã—ãŸãƒ­ã‚°ã‚’ãƒšãƒ¼ã‚¹ãƒˆã—ã¦ãã ã•ã„ã€‚"></textarea>
         </p>
-        <p><button onclick="editText()" class="btn-flat-border" type="button">•ÒW</button></p>
+        <p><button onclick="editText()" class="btn-flat-border" type="button">ç·¨é›†</button></p>
         </p>
     </div>
     <div>
-        <!-- ƒRƒs[‘ÎÛ—v‘f‚ÆƒRƒs[ƒ{ƒ^ƒ“ -->
+        <!-- ã‚³ãƒ”ãƒ¼å¯¾è±¡è¦ç´ ã¨ã‚³ãƒ”ãƒ¼ãƒœã‚¿ãƒ³ -->
         <p>
-            <h4>ž•ÒWÏ‚ÝƒƒOž</h4>
-            <textarea id="copyTarget" type="text" cols="80" rows="20" placeholder="‚±‚±‚É•ÒW‚³‚ê‚½ƒƒO‚ªo—Í‚³‚ê‚Ü‚·B"></textarea>
+            <h4>â—‡ç·¨é›†æ¸ˆã¿ãƒ­ã‚°â—‡</h4>
+            <textarea id="copyTarget" type="text" cols="80" rows="20" placeholder="ã“ã“ã«ç·¨é›†ã•ã‚ŒãŸãƒ­ã‚°ãŒå‡ºåŠ›ã•ã‚Œã¾ã™ã€‚"></textarea>
         </p>
-        <p><button onclick="copyToClipboard()" class="btn-flat-border" type="button">ƒRƒs[</button></p>
+        <p><button onclick="copyToClipboard()" class="btn-flat-border" type="button">ã‚³ãƒ”ãƒ¼</button></p>
     </div>
 
     <div>
         <details>
-            <summary>íœ‚³‚ê‚éƒVƒXƒeƒ€ƒƒbƒZ[ƒWˆê——</summary>
-            ‘€ì’†‚ÌƒLƒƒƒ‰ƒNƒ^[‚Ís“®‚Å‚«‚Ü‚¹‚ñB|‰Šúƒ{[ƒh‚ÉˆÚ“®‚µ‚Ü‚·B|Žw’è‚µ‚½ƒ{[ƒh‚Í’¼ÚŽQ‰Á‚Å‚«‚Ü‚¹‚ñB|Ž©“®ƒXƒNƒ[ƒ‹‚ð‰ðœ‚µ‚Ü‚µ‚½B|Ž©“®ƒXƒNƒ[ƒ‹‚ð—LŒø‚É‚µ‚Ü‚µ‚½B|ƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚é‚Æs“®‚Å‚«‚Ü‚¹‚ñB|‚ªƒƒOƒAƒEƒg‚µ‚Ü‚µ‚½B|‚ªƒƒOƒCƒ“‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú‚ðŠJŽn‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú’†B|ƒCƒxƒ“ƒg‚ÍŠù‚ÉI—¹‚µ‚Ü‚µ‚½B|ƒCƒxƒ“ƒg“¯Šú‚ªŠ®—¹‚µ‚Ü‚µ‚½B|•¶Í‚ðXV‚µ‚Ü‚µ‚½B|ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚µ‚½B|ƒƒbƒZ[ƒWƒƒO‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒAƒNƒeƒBƒuƒV[ƒ“|ƒLƒƒƒ“ƒZƒ‹‚µ‚Ü‚µ‚½B|ŠŽ”‚ªÅ‘å‚ð’´‚¦‚é‚½‚ßw“ü‚Å‚«‚Ü‚¹‚ñB|ìíiƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ìíiƒŠƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒ[ƒ‹‚ð•ÏX‚µ‚Ü‚µ‚½B|ƒ‰ƒCƒZƒ“ƒX‚ðXV‚µ‚Ü‚µ‚½B|‹¤—L‚ðXV‚µ‚Ü‚µ‚½B|‚ÉƒŒƒxƒ‹ƒVƒ“ƒN‚µ‚Ü‚µ‚½B|ƒŒƒxƒ‹ƒVƒ“ƒN‚ð‰ðœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚ðíœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚É’Ç‰Á‚µ‚Ü‚µ‚½B|‚ðƒuƒƒbƒN‚É’Ç‰Á‚µ‚Ü‚µ‚½B|ƒuƒƒbƒN‚ðíœ‚µ‚Ü‚µ‚½B|‚ªŒöŠJ‚³‚ê‚Ü‚µ‚½I|“à—e‚ª’·‚·‚¬‚Ü‚·B|•Ï”•Û‘¶|ƒ{[ƒh‚Ì‘€ì‚ª‹ÖŽ~‚³‚ê‚Ü‚µ‚½B|ƒ{[ƒh‚Ì‘€ì‹ÖŽ~‚ª‰ðœ‚³‚ê‚Ü‚µ‚½B|ƒNƒGƒXƒg’†‚ÍŠJ‚­‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB|ƒCƒxƒ“ƒg’†‚ÍŽÀs‚Å‚«‚Ü‚¹‚ñB|ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢|ƒRƒ}ƒ“ƒhˆê——‚ð•\Ž¦‚·‚é|ƒp[ƒeƒB[ŽQ‰ÁŽÒ‚ÉƒƒbƒZ[ƒW‚ð‘—‚é|’n‚Ì•¶‚Æ‚µ‚ÄƒƒbƒZ[ƒW‚ð‘—‚é|ƒ_ƒCƒX‚ðU‚Á‚½Œ‹‰Ê‚ð•\Ž¦‚·‚é|ƒ‹[ƒ€‚©‚ç—£’E‚·‚éB|ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ð•Û‘¶‚·‚é|ƒƒbƒZ[ƒW‚ÌƒƒO‚ð•Û‘¶‚·‚é|‚Å”»’è‚ð’Ç‰Á‚·‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B|ƒZƒŠƒt‚ð•Û‘¶‚µ‚Ü‚µ‚½B|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒ|ƒbƒvƒAƒbƒv‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B|‘¼‚ÉƒƒOƒCƒ“‚µ‚Ä‚¢‚éƒp[ƒeƒB[ƒLƒƒƒ‰ƒNƒ^[‚ª‚¢‚Ü‚¹‚ñB|‚±‚Ìs“®‚Í’n“_Žw’è‚Å‚·B|ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|Šù‚É‚»‚Ìƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚Ü‚·B|íŽžƒvƒ‰ƒCƒx[ƒg‚ð–³Œø‚É‚µ‚Ü‚µ‚½B|•Ê‚ÌƒCƒxƒ“ƒg‚ªŒÄ‚Ño‚³‚ê‚½‚ßAŽÀs’†‚ÌƒCƒxƒ“ƒg‚ª’†’f‚³‚ê‚Ü‚µ‚½B|‚Ì“ü—Í‚ð‘Ò‹@‚µ‚Ä‚¢‚Ü‚·B|‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒLƒƒƒ‰ƒNƒ^[ƒ^ƒO‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B
-<h5>ƒ`ƒFƒbƒNŽž‚Ì‚Ýíœ</h5>
-            ‚Ì‘•”õ‚ð‰ðœ‚µ‚Ü‚µ‚½B|‚ð‘•”õ‚µ‚Ü‚µ‚½B
+            <summary>å‰Šé™¤ã•ã‚Œã‚‹ã‚·ã‚¹ãƒ†ãƒ ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ä¸€è¦§</summary>
+            æ“ä½œä¸­ã®ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã¯è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|åˆæœŸãƒœãƒ¼ãƒ‰ã«ç§»å‹•ã—ã¾ã™ã€‚|æŒ‡å®šã—ãŸãƒœãƒ¼ãƒ‰ã¯ç›´æŽ¥å‚åŠ ã§ãã¾ã›ã‚“ã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’æœ‰åŠ¹ã«ã—ã¾ã—ãŸã€‚|ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã‚‹ã¨è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|ãŒãƒ­ã‚°ã‚¢ã‚¦ãƒˆã—ã¾ã—ãŸã€‚|ãŒãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸã‚’é–‹å§‹ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸä¸­ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆã¯æ—¢ã«çµ‚äº†ã—ã¾ã—ãŸã€‚|ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸãŒå®Œäº†ã—ã¾ã—ãŸã€‚|æ–‡ç« ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸã€‚|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ­ã‚°ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚·ãƒ¼ãƒ³|ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ã¾ã—ãŸã€‚|æ‰€æŒæ•°ãŒæœ€å¤§ã‚’è¶…ãˆã‚‹ãŸã‚è³¼å…¥ã§ãã¾ã›ã‚“ã€‚|ä½œæˆ¦ï¼ˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ä½œæˆ¦ï¼ˆãƒªã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ãƒ­ãƒ¼ãƒ«ã‚’å¤‰æ›´ã—ã¾ã—ãŸã€‚|ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|å…±æœ‰ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã«ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã—ã¾ã—ãŸã€‚|ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ã‚’ãƒ–ãƒ­ãƒƒã‚¯ã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŒå…¬é–‹ã•ã‚Œã¾ã—ãŸï¼|å†…å®¹ãŒé•·ã™ãŽã¾ã™ã€‚|å¤‰æ•°ä¿å­˜|ãƒœãƒ¼ãƒ‰ã®æ“ä½œãŒç¦æ­¢ã•ã‚Œã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã®æ“ä½œç¦æ­¢ãŒè§£é™¤ã•ã‚Œã¾ã—ãŸã€‚|ã‚¯ã‚¨ã‚¹ãƒˆä¸­ã¯é–‹ãã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆä¸­ã¯å®Ÿè¡Œã§ãã¾ã›ã‚“ã€‚|ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›ã—ã¦ãã ã•ã„|ã‚³ãƒžãƒ³ãƒ‰ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹|ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼å‚åŠ è€…ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|åœ°ã®æ–‡ã¨ã—ã¦ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|ãƒ€ã‚¤ã‚¹ã‚’æŒ¯ã£ãŸçµæžœã‚’è¡¨ç¤ºã™ã‚‹|ãƒ«ãƒ¼ãƒ ã‹ã‚‰é›¢è„±ã™ã‚‹ã€‚|ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ä¿å­˜ã™ã‚‹|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ãƒ­ã‚°ã‚’ä¿å­˜ã™ã‚‹|ã§åˆ¤å®šã‚’è¿½åŠ ã™ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚|ã‚»ãƒªãƒ•ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚|ä»–ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã‚‹ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãŒã„ã¾ã›ã‚“ã€‚|ã“ã®è¡Œå‹•ã¯åœ°ç‚¹æŒ‡å®šã§ã™ã€‚|ã‚µã‚¦ãƒ³ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|æ—¢ã«ãã®ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã¾ã™ã€‚|å¸¸æ™‚ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆã‚’ç„¡åŠ¹ã«ã—ã¾ã—ãŸã€‚|åˆ¥ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒå‘¼ã³å‡ºã•ã‚ŒãŸã‚ã€å®Ÿè¡Œä¸­ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒä¸­æ–­ã•ã‚Œã¾ã—ãŸã€‚|ã®å…¥åŠ›ã‚’å¾…æ©Ÿã—ã¦ã„ã¾ã™ã€‚|ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚¿ã‚°ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚
+<h5>ãƒã‚§ãƒƒã‚¯æ™‚ã®ã¿å‰Šé™¤</h5>
+            ã®è£…å‚™ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|ã‚’è£…å‚™ã—ã¾ã—ãŸã€‚
         </details>
     </div>
     <script>
         function copyToClipboard() {
-            // ƒRƒs[‘ÎÛ‚ðJavaScriptã‚Å•Ï”‚Æ‚µ‚Ä’è‹`‚·‚é
+            // ã‚³ãƒ”ãƒ¼å¯¾è±¡ã‚’JavaScriptä¸Šã§å¤‰æ•°ã¨ã—ã¦å®šç¾©ã™ã‚‹
             var copyTarget = document.getElementById("copyTarget");
 
-            // ƒRƒs[‘ÎÛ‚ÌƒeƒLƒXƒg‚ð‘I‘ð‚·‚é
+            // ã‚³ãƒ”ãƒ¼å¯¾è±¡ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’é¸æŠžã™ã‚‹
             copyTarget.select();
 
-            // ‘I‘ð‚µ‚Ä‚¢‚éƒeƒLƒXƒg‚ðƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚·‚é
+            // é¸æŠžã—ã¦ã„ã‚‹ãƒ†ã‚­ã‚¹ãƒˆã‚’ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
             document.execCommand("Copy");
 
-            // ƒRƒs[‚ð‚¨’m‚ç‚¹‚·‚é
-            alert("ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚µ‚½B");
+            // ã‚³ãƒ”ãƒ¼ã‚’ãŠçŸ¥ã‚‰ã›ã™ã‚‹
+            alert("ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸã€‚");
         }
     </script>
     <script>
         function editText() {
-            var TargetString = document.getElementById("inputlog").value; //TargetString‚Éinputlog‚Ì’†g‚ð‘ã“ü
-            var flag = false; //flag‚Ì‰Šú’l‚ðÝ’è
+            var TargetString = document.getElementById("inputlog").value; //TargetStringã«inputlogã®ä¸­èº«ã‚’ä»£å…¥
+            var flag = false; //flagã®åˆæœŸå€¤ã‚’è¨­å®š
             for( i=0; i<1; i++ ) {
-                // 1”Ô–Ú‚Ìƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ªƒ`ƒFƒbƒN‚³‚ê‚Ä‚¢‚é‚©‚ð”»’è
+                // 1ç•ªç›®ã®ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ãŒãƒã‚§ãƒƒã‚¯ã•ã‚Œã¦ã„ã‚‹ã‹ã‚’åˆ¤å®š
                 if (document.form1.elements[i].checked) {
-                    flag = true; //‘•”õ•iŠÖ˜Aƒ`ƒFƒbƒN—L‚è‚Ìê‡  
-                    var ResString = TargetString.replace(/^.*(‘€ì’†‚ÌƒLƒƒƒ‰ƒNƒ^[‚Ís“®‚Å‚«‚Ü‚¹‚ñB|‰Šúƒ{[ƒh‚ÉˆÚ“®‚µ‚Ü‚·B|Žw’è‚µ‚½ƒ{[ƒh‚Í’¼ÚŽQ‰Á‚Å‚«‚Ü‚¹‚ñB|Ž©“®ƒXƒNƒ[ƒ‹‚ð‰ðœ‚µ‚Ü‚µ‚½B|Ž©“®ƒXƒNƒ[ƒ‹‚ð—LŒø‚É‚µ‚Ü‚µ‚½B|ƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚é‚Æs“®‚Å‚«‚Ü‚¹‚ñB|‚ªƒƒOƒAƒEƒg‚µ‚Ü‚µ‚½B|‚ªƒƒOƒCƒ“‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú‚ðŠJŽn‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú’†B|ƒCƒxƒ“ƒg‚ÍŠù‚ÉI—¹‚µ‚Ü‚µ‚½B|ƒCƒxƒ“ƒg“¯Šú‚ªŠ®—¹‚µ‚Ü‚µ‚½B|•¶Í‚ðXV‚µ‚Ü‚µ‚½B|ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚µ‚½B|ƒƒbƒZ[ƒWƒƒO‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒAƒNƒeƒBƒuƒV[ƒ“|ƒLƒƒƒ“ƒZƒ‹‚µ‚Ü‚µ‚½B|ŠŽ”‚ªÅ‘å‚ð’´‚¦‚é‚½‚ßw“ü‚Å‚«‚Ü‚¹‚ñB|ìíiƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ìíiƒŠƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒ[ƒ‹‚ð•ÏX‚µ‚Ü‚µ‚½B|ƒ‰ƒCƒZƒ“ƒX‚ðXV‚µ‚Ü‚µ‚½B|‹¤—L‚ðXV‚µ‚Ü‚µ‚½B|‚ÉƒŒƒxƒ‹ƒVƒ“ƒN‚µ‚Ü‚µ‚½B|ƒŒƒxƒ‹ƒVƒ“ƒN‚ð‰ðœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚ðíœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚É’Ç‰Á‚µ‚Ü‚µ‚½B|‚ðƒuƒƒbƒN‚É’Ç‰Á‚µ‚Ü‚µ‚½B|ƒuƒƒbƒN‚ðíœ‚µ‚Ü‚µ‚½B|‚ªŒöŠJ‚³‚ê‚Ü‚µ‚½I|“à—e‚ª’·‚·‚¬‚Ü‚·B|•Ï”•Û‘¶|ƒ{[ƒh‚Ì‘€ì‚ª‹ÖŽ~‚³‚ê‚Ü‚µ‚½B|ƒ{[ƒh‚Ì‘€ì‹ÖŽ~‚ª‰ðœ‚³‚ê‚Ü‚µ‚½B|ƒNƒGƒXƒg’†‚ÍŠJ‚­‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB|ƒCƒxƒ“ƒg’†‚ÍŽÀs‚Å‚«‚Ü‚¹‚ñB|ƒRƒ}ƒ“ƒhˆê——‚ð•\Ž¦‚·‚é|ƒp[ƒeƒB[ŽQ‰ÁŽÒ‚ÉƒƒbƒZ[ƒW‚ð‘—‚é|’n‚Ì•¶‚Æ‚µ‚ÄƒƒbƒZ[ƒW‚ð‘—‚é|ƒ_ƒCƒX‚ðU‚Á‚½Œ‹‰Ê‚ð•\Ž¦‚·‚é|ƒ‹[ƒ€‚©‚ç—£’E‚·‚éB|ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ð•Û‘¶‚·‚é|ƒƒbƒZ[ƒW‚ÌƒƒO‚ð•Û‘¶‚·‚é|‚Å”»’è‚ð’Ç‰Á‚·‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B|ƒZƒŠƒt‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒ|ƒbƒvƒAƒbƒv‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B|‘¼‚ÉƒƒOƒCƒ“‚µ‚Ä‚¢‚éƒp[ƒeƒB[ƒLƒƒƒ‰ƒNƒ^[‚ª‚¢‚Ü‚¹‚ñB|‚±‚Ìs“®‚Í’n“_Žw’è‚Å‚·B|ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|Šù‚É‚»‚Ìƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚Ü‚·B|íŽžƒvƒ‰ƒCƒx[ƒg‚ð–³Œø‚É‚µ‚Ü‚µ‚½B|‚Ì‘•”õ‚ð‰ðœ‚µ‚Ü‚µ‚½B|‚ð‘•”õ‚µ‚Ü‚µ‚½B|•Ê‚ÌƒCƒxƒ“ƒg‚ªŒÄ‚Ño‚³‚ê‚½‚ßAŽÀs’†‚ÌƒCƒxƒ“ƒg‚ª’†’f‚³‚ê‚Ü‚µ‚½B|‚Ì“ü—Í‚ð‘Ò‹@‚µ‚Ä‚¢‚Ü‚·B|‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒLƒƒƒ‰ƒNƒ^[ƒ^ƒO‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B).*$(\r\n|\r|\n)?/gm, ""); //TargetString‚ð’uŠ·‚µ‚ÄResString‚É‘ã“üž‘•”õ•iŠÜ‚Þ
+                    flag = true; //è£…å‚™å“é–¢é€£ãƒã‚§ãƒƒã‚¯æœ‰ã‚Šã®å ´åˆ  
+                    var ResString = TargetString.replace(/^.*(æ“ä½œä¸­ã®ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã¯è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|åˆæœŸãƒœãƒ¼ãƒ‰ã«ç§»å‹•ã—ã¾ã™ã€‚|æŒ‡å®šã—ãŸãƒœãƒ¼ãƒ‰ã¯ç›´æŽ¥å‚åŠ ã§ãã¾ã›ã‚“ã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’æœ‰åŠ¹ã«ã—ã¾ã—ãŸã€‚|ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã‚‹ã¨è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|ãŒãƒ­ã‚°ã‚¢ã‚¦ãƒˆã—ã¾ã—ãŸã€‚|ãŒãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸã‚’é–‹å§‹ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸä¸­ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆã¯æ—¢ã«çµ‚äº†ã—ã¾ã—ãŸã€‚|ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸãŒå®Œäº†ã—ã¾ã—ãŸã€‚|æ–‡ç« ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸã€‚|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ­ã‚°ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚·ãƒ¼ãƒ³|ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ã¾ã—ãŸã€‚|æ‰€æŒæ•°ãŒæœ€å¤§ã‚’è¶…ãˆã‚‹ãŸã‚è³¼å…¥ã§ãã¾ã›ã‚“ã€‚|ä½œæˆ¦ï¼ˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ä½œæˆ¦ï¼ˆãƒªã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ãƒ­ãƒ¼ãƒ«ã‚’å¤‰æ›´ã—ã¾ã—ãŸã€‚|ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|å…±æœ‰ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã«ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã—ã¾ã—ãŸã€‚|ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ã‚’ãƒ–ãƒ­ãƒƒã‚¯ã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŒå…¬é–‹ã•ã‚Œã¾ã—ãŸï¼|å†…å®¹ãŒé•·ã™ãŽã¾ã™ã€‚|å¤‰æ•°ä¿å­˜|ãƒœãƒ¼ãƒ‰ã®æ“ä½œãŒç¦æ­¢ã•ã‚Œã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã®æ“ä½œç¦æ­¢ãŒè§£é™¤ã•ã‚Œã¾ã—ãŸã€‚|ã‚¯ã‚¨ã‚¹ãƒˆä¸­ã¯é–‹ãã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆä¸­ã¯å®Ÿè¡Œã§ãã¾ã›ã‚“ã€‚|ã‚³ãƒžãƒ³ãƒ‰ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹|ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼å‚åŠ è€…ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|åœ°ã®æ–‡ã¨ã—ã¦ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|ãƒ€ã‚¤ã‚¹ã‚’æŒ¯ã£ãŸçµæžœã‚’è¡¨ç¤ºã™ã‚‹|ãƒ«ãƒ¼ãƒ ã‹ã‚‰é›¢è„±ã™ã‚‹ã€‚|ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ä¿å­˜ã™ã‚‹|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ãƒ­ã‚°ã‚’ä¿å­˜ã™ã‚‹|ã§åˆ¤å®šã‚’è¿½åŠ ã™ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚|ã‚»ãƒªãƒ•ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›ã—ã¦ãã ã•ã„|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚|ä»–ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã‚‹ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãŒã„ã¾ã›ã‚“ã€‚|ã“ã®è¡Œå‹•ã¯åœ°ç‚¹æŒ‡å®šã§ã™ã€‚|ã‚µã‚¦ãƒ³ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|æ—¢ã«ãã®ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã¾ã™ã€‚|å¸¸æ™‚ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆã‚’ç„¡åŠ¹ã«ã—ã¾ã—ãŸã€‚|ã®è£…å‚™ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|ã‚’è£…å‚™ã—ã¾ã—ãŸã€‚|åˆ¥ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒå‘¼ã³å‡ºã•ã‚ŒãŸã‚ã€å®Ÿè¡Œä¸­ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒä¸­æ–­ã•ã‚Œã¾ã—ãŸã€‚|ã®å…¥åŠ›ã‚’å¾…æ©Ÿã—ã¦ã„ã¾ã™ã€‚|ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚¿ã‚°ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚).*$(\r\n|\r|\n)?/gm, ""); //TargetStringã‚’ç½®æ›ã—ã¦ResStringã«ä»£å…¥â—‡è£…å‚™å“å«ã‚€
                 }
             }
 
-            // ‰½‚à‘I‘ð‚³‚ê‚Ä‚¢‚È‚¢ê‡‚Ìˆ—   
+            // ä½•ã‚‚é¸æŠžã•ã‚Œã¦ã„ãªã„å ´åˆã®å‡¦ç†   
             if (!flag) {
-                var ResString = TargetString.replace(/^.*(‘€ì’†‚ÌƒLƒƒƒ‰ƒNƒ^[‚Ís“®‚Å‚«‚Ü‚¹‚ñB|‰Šúƒ{[ƒh‚ÉˆÚ“®‚µ‚Ü‚·B|Žw’è‚µ‚½ƒ{[ƒh‚Í’¼ÚŽQ‰Á‚Å‚«‚Ü‚¹‚ñB|Ž©“®ƒXƒNƒ[ƒ‹‚ð‰ðœ‚µ‚Ü‚µ‚½B|Ž©“®ƒXƒNƒ[ƒ‹‚ð—LŒø‚É‚µ‚Ü‚µ‚½B|ƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚é‚Æs“®‚Å‚«‚Ü‚¹‚ñB|‚ªƒƒOƒAƒEƒg‚µ‚Ü‚µ‚½B|‚ªƒƒOƒCƒ“‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú‚ðŠJŽn‚µ‚Ü‚µ‚½B|ƒ{[ƒhƒCƒxƒ“ƒg“¯Šú’†B|ƒCƒxƒ“ƒg‚ÍŠù‚ÉI—¹‚µ‚Ü‚µ‚½B|ƒCƒxƒ“ƒg“¯Šú‚ªŠ®—¹‚µ‚Ü‚µ‚½B|•¶Í‚ðXV‚µ‚Ü‚µ‚½B|ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚µ‚½B|ƒƒbƒZ[ƒWƒƒO‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒAƒNƒeƒBƒuƒV[ƒ“|ƒLƒƒƒ“ƒZƒ‹‚µ‚Ü‚µ‚½B|ŠŽ”‚ªÅ‘å‚ð’´‚¦‚é‚½‚ßw“ü‚Å‚«‚Ü‚¹‚ñB|ìíiƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ìíiƒŠƒAƒNƒVƒ‡ƒ“j‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒ[ƒ‹‚ð•ÏX‚µ‚Ü‚µ‚½B|ƒ‰ƒCƒZƒ“ƒX‚ðXV‚µ‚Ü‚µ‚½B|‹¤—L‚ðXV‚µ‚Ü‚µ‚½B|‚ÉƒŒƒxƒ‹ƒVƒ“ƒN‚µ‚Ü‚µ‚½B|ƒŒƒxƒ‹ƒVƒ“ƒN‚ð‰ðœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚ðíœ‚µ‚Ü‚µ‚½B|‚¨‹C‚É“ü‚è‚É’Ç‰Á‚µ‚Ü‚µ‚½B|‚ðƒuƒƒbƒN‚É’Ç‰Á‚µ‚Ü‚µ‚½B|ƒuƒƒbƒN‚ðíœ‚µ‚Ü‚µ‚½B|‚ªŒöŠJ‚³‚ê‚Ü‚µ‚½I|“à—e‚ª’·‚·‚¬‚Ü‚·B|•Ï”•Û‘¶|ƒ{[ƒh‚Ì‘€ì‚ª‹ÖŽ~‚³‚ê‚Ü‚µ‚½B|ƒ{[ƒh‚Ì‘€ì‹ÖŽ~‚ª‰ðœ‚³‚ê‚Ü‚µ‚½B|ƒNƒGƒXƒg’†‚ÍŠJ‚­‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB|ƒCƒxƒ“ƒg’†‚ÍŽÀs‚Å‚«‚Ü‚¹‚ñB|ƒRƒ}ƒ“ƒhˆê——‚ð•\Ž¦‚·‚é|ƒp[ƒeƒB[ŽQ‰ÁŽÒ‚ÉƒƒbƒZ[ƒW‚ð‘—‚é|’n‚Ì•¶‚Æ‚µ‚ÄƒƒbƒZ[ƒW‚ð‘—‚é|ƒ_ƒCƒX‚ðU‚Á‚½Œ‹‰Ê‚ð•\Ž¦‚·‚é|ƒ‹[ƒ€‚©‚ç—£’E‚·‚éB|ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg‚ð•Û‘¶‚·‚é|ƒƒbƒZ[ƒW‚ÌƒƒO‚ð•Û‘¶‚·‚é|‚Å”»’è‚ð’Ç‰Á‚·‚é‚±‚Æ‚à‚Å‚«‚Ü‚·B|ƒZƒŠƒt‚ð•Û‘¶‚µ‚Ü‚µ‚½B|ƒeƒLƒXƒg‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒ|ƒbƒvƒAƒbƒv‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B|‘¼‚ÉƒƒOƒCƒ“‚µ‚Ä‚¢‚éƒp[ƒeƒB[ƒLƒƒƒ‰ƒNƒ^[‚ª‚¢‚Ü‚¹‚ñB|‚±‚Ìs“®‚Í’n“_Žw’è‚Å‚·B|ƒTƒEƒ“ƒhƒtƒ@ƒCƒ‹‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|Šù‚É‚»‚Ìƒ‹[ƒ€‚ÉŽQ‰Á‚µ‚Ä‚¢‚Ü‚·B|íŽžƒvƒ‰ƒCƒx[ƒg‚ð–³Œø‚É‚µ‚Ü‚µ‚½B|•Ê‚ÌƒCƒxƒ“ƒg‚ªŒÄ‚Ño‚³‚ê‚½‚ßAŽÀs’†‚ÌƒCƒxƒ“ƒg‚ª’†’f‚³‚ê‚Ü‚µ‚½B|‚Ì“ü—Í‚ð‘Ò‹@‚µ‚Ä‚¢‚Ü‚·B|‚Ì“Ç‚Ýž‚Ý‚ÉŽ¸”s‚µ‚Ü‚µ‚½B|•¡”‚Ì‘ÎÛ‚ª‚ ‚é‚Ì‚ÅA•\Ž¦‚³‚ê‚Ä‚¢‚éƒLƒƒƒ‰ƒNƒ^[ƒ^ƒO‚©‚ç‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B).*$(\r\n|\r|\n)?/gm, ""); //TargetString‚ð’uŠ·‚µ‚ÄResString‚É‘ã“üž‘•”õ•iŠÜ‚Ü‚¸
+                var ResString = TargetString.replace(/^.*(æ“ä½œä¸­ã®ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã¯è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|åˆæœŸãƒœãƒ¼ãƒ‰ã«ç§»å‹•ã—ã¾ã™ã€‚|æŒ‡å®šã—ãŸãƒœãƒ¼ãƒ‰ã¯ç›´æŽ¥å‚åŠ ã§ãã¾ã›ã‚“ã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|è‡ªå‹•ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚’æœ‰åŠ¹ã«ã—ã¾ã—ãŸã€‚|ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã‚‹ã¨è¡Œå‹•ã§ãã¾ã›ã‚“ã€‚|ãŒãƒ­ã‚°ã‚¢ã‚¦ãƒˆã—ã¾ã—ãŸã€‚|ãŒãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸã‚’é–‹å§‹ã—ã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸä¸­ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆã¯æ—¢ã«çµ‚äº†ã—ã¾ã—ãŸã€‚|ã‚¤ãƒ™ãƒ³ãƒˆåŒæœŸãŒå®Œäº†ã—ã¾ã—ãŸã€‚|æ–‡ç« ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸã€‚|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ­ã‚°ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã‚·ãƒ¼ãƒ³|ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã—ã¾ã—ãŸã€‚|æ‰€æŒæ•°ãŒæœ€å¤§ã‚’è¶…ãˆã‚‹ãŸã‚è³¼å…¥ã§ãã¾ã›ã‚“ã€‚|ä½œæˆ¦ï¼ˆã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ä½œæˆ¦ï¼ˆãƒªã‚¢ã‚¯ã‚·ãƒ§ãƒ³ï¼‰ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ãƒ­ãƒ¼ãƒ«ã‚’å¤‰æ›´ã—ã¾ã—ãŸã€‚|ãƒ©ã‚¤ã‚»ãƒ³ã‚¹ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|å…±æœ‰ã‚’æ›´æ–°ã—ã¾ã—ãŸã€‚|ã«ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã—ã¾ã—ãŸã€‚|ãƒ¬ãƒ™ãƒ«ã‚·ãƒ³ã‚¯ã‚’è§£é™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŠæ°—ã«å…¥ã‚Šã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ã‚’ãƒ–ãƒ­ãƒƒã‚¯ã«è¿½åŠ ã—ã¾ã—ãŸã€‚|ãƒ–ãƒ­ãƒƒã‚¯ã‚’å‰Šé™¤ã—ã¾ã—ãŸã€‚|ãŒå…¬é–‹ã•ã‚Œã¾ã—ãŸï¼|å†…å®¹ãŒé•·ã™ãŽã¾ã™ã€‚|å¤‰æ•°ä¿å­˜|ãƒœãƒ¼ãƒ‰ã®æ“ä½œãŒç¦æ­¢ã•ã‚Œã¾ã—ãŸã€‚|ãƒœãƒ¼ãƒ‰ã®æ“ä½œç¦æ­¢ãŒè§£é™¤ã•ã‚Œã¾ã—ãŸã€‚|ã‚¯ã‚¨ã‚¹ãƒˆä¸­ã¯é–‹ãã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚|ã‚¤ãƒ™ãƒ³ãƒˆä¸­ã¯å®Ÿè¡Œã§ãã¾ã›ã‚“ã€‚|ã‚³ãƒžãƒ³ãƒ‰ä¸€è¦§ã‚’è¡¨ç¤ºã™ã‚‹|ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼å‚åŠ è€…ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|åœ°ã®æ–‡ã¨ã—ã¦ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’é€ã‚‹|ãƒ€ã‚¤ã‚¹ã‚’æŒ¯ã£ãŸçµæžœã‚’è¡¨ç¤ºã™ã‚‹|ãƒ«ãƒ¼ãƒ ã‹ã‚‰é›¢è„±ã™ã‚‹ã€‚|ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆã‚’ä¿å­˜ã™ã‚‹|ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ãƒ­ã‚°ã‚’ä¿å­˜ã™ã‚‹|ã§åˆ¤å®šã‚’è¿½åŠ ã™ã‚‹ã“ã¨ã‚‚ã§ãã¾ã™ã€‚|ã‚»ãƒªãƒ•ã‚’ä¿å­˜ã—ã¾ã—ãŸã€‚|ãƒ†ã‚­ã‚¹ãƒˆã‚’å…¥åŠ›ã—ã¦ãã ã•ã„|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚|ä»–ã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¦ã„ã‚‹ãƒ‘ãƒ¼ãƒ†ã‚£ãƒ¼ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãŒã„ã¾ã›ã‚“ã€‚|ã“ã®è¡Œå‹•ã¯åœ°ç‚¹æŒ‡å®šã§ã™ã€‚|ã‚µã‚¦ãƒ³ãƒ‰ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|æ—¢ã«ãã®ãƒ«ãƒ¼ãƒ ã«å‚åŠ ã—ã¦ã„ã¾ã™ã€‚|å¸¸æ™‚ãƒ—ãƒ©ã‚¤ãƒ™ãƒ¼ãƒˆã‚’ç„¡åŠ¹ã«ã—ã¾ã—ãŸã€‚|åˆ¥ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒå‘¼ã³å‡ºã•ã‚ŒãŸã‚ã€å®Ÿè¡Œä¸­ã®ã‚¤ãƒ™ãƒ³ãƒˆãŒä¸­æ–­ã•ã‚Œã¾ã—ãŸã€‚|ã®å…¥åŠ›ã‚’å¾…æ©Ÿã—ã¦ã„ã¾ã™ã€‚|ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸã€‚|è¤‡æ•°ã®å¯¾è±¡ãŒã‚ã‚‹ã®ã§ã€è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ã‚¿ã‚°ã‹ã‚‰é¸æŠžã—ã¦ãã ã•ã„ã€‚).*$(\r\n|\r|\n)?/gm, ""); //TargetStringã‚’ç½®æ›ã—ã¦ResStringã«ä»£å…¥â—‡è£…å‚™å“å«ã¾ãš
             }
-            document.getElementById('copyTarget').textContent = ResString; //copyTarget‚ÉResString‚Ì“à—e‚ð•\Ž¦
-            alert("•ÒW‚ðŠ®—¹‚µ‚Ü‚µ‚½B"); //•\Ž¦‚µ‚½Ž–‚ð’Ê’m
+            document.getElementById('copyTarget').textContent = ResString; //copyTargetã«ResStringã®å†…å®¹ã‚’è¡¨ç¤º
+            alert("ç·¨é›†ã‚’å®Œäº†ã—ã¾ã—ãŸã€‚"); //è¡¨ç¤ºã—ãŸäº‹ã‚’é€šçŸ¥
         }
     </script>
 </body></html>
